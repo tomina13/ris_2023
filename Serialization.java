@@ -4,8 +4,18 @@ import java.io.*;
 
 public class Serialization {
     public static void main(String[] args) throws IOException {
-        Electrical washingMachine = new Electrical("Bosch", 1500);
-        Electrical refrigerator = new Electrical("LG", 200);
+        Electrical washingMachine = new Electrical("Bosch", 1500) {
+            @Override
+            public String tostring() {
+                return null;
+            }
+        };
+        Electrical refrigerator = new Electrical("LG", 200) {
+            @Override
+            public String tostring() {
+                return null;
+            }
+        };
 
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("electrical.ser"))){
             outputStream.writeObject(washingMachine);
