@@ -2,7 +2,7 @@ package org.example;
 
 import java.io.*;
 
-class Electrical implements Serializable {
+abstract class Electrical implements Serializable {
     String name;
     double power;
 
@@ -31,4 +31,6 @@ class Electrical implements Serializable {
     public String toString() {
         return "Electrical{" + "name='" + name + '\'' + ", power=" + power + '}';
     }
+
+    public abstract String tostring();
 }
